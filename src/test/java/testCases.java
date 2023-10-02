@@ -32,9 +32,26 @@ public class testCases {
         page.locator("//a[contains(.,'Logged in as emir')]").isEnabled();
         page.locator("//a[contains(.,'Logged in as emir')]").isVisible();
 
+    }
 
-
-
+    @Test
+    public void case002(){
+        // automation exercise sitesine git
+        page.navigate("https://automationexercise.com/");
+        // home page açıldı mı kontrol et
+        page.locator("img[alt='Website for automation practice']").isVisible();
+        // login butonuna tıkla
+        page.click("//a[contains(.,'Signup / Login')]");
+        //login sayfası açıldı mı kontrol et
+        page.locator("//h2[text()='Login to your account']").isVisible();
+        // email ve şifre girip login butonuna tıkla
+        page.type("input[data-qa='login-email']","emir@mail.com");
+        page.type("input[type='password']","emir");
+        page.click("button[data-qa='login-button']");
+        // ***
+        // kullanıcı adı ile giriş yaptın yazısını kontrol et
+        page.locator("//a[contains(.,'Logged in as emir')]").isEnabled();
+        page.locator("//a[contains(.,'Logged in as emir')]").isVisible();
 
     }
 
